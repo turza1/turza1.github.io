@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang='bn'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>তুর্য</title>
+    
+    <link rel="shortcut icon" href=/static/love.png type="image/x-icon">
+    <link rel="icon" href=/static/love.png type="image/x-icon">
+    <link rel="icon" href=/static/love.png type="image/gif" sizes="16x16">
+    <meta property="og:title" content="আবির মোহাম্মদ তুর্য" />
+    <meta property="og:description" content="আহা কি আনন্দ আকাশে বাতাসে। শাখে শাখে পাখি ডাকে, কত শোভা চারিপাশে। আহা কি আনন্দ আকাশে বাতাসে।" />
+    <meta property="og:image" content=/static/life.png />
+    <link href="https://fonts.maateen.me/charukola-ultra-light/font.css" rel="stylesheet">
+    <link href="https://fonts.maateen.me/charu-chandan-hard-stroke/font.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <style>
+        #age {
+            color: red;
+            font-size: 40px;
+            font-style: bold
+        }
+    </style>
+    <script>
+
+        var start = new Date('10/23/1997 5:59 AM');
+        var timer;
+
+        function age() {
+            var now = new Date();
+            var age = now.getTime() - start.getTime();
+            var sec = (age / 1000).toFixed(0)
+
+            total_seconds_of_a_year = 31557600
+            total_seconds_of_a_day = 86400
+            total_seconds_of_a_hour = 3600
+            var year = ~~(sec / total_seconds_of_a_year)
+            var day = ~~((sec - year * total_seconds_of_a_year) / total_seconds_of_a_day)
+            var hour = ~~((sec - year * total_seconds_of_a_year - day * total_seconds_of_a_day) / total_seconds_of_a_hour)
+            var min = ~~((sec - year * total_seconds_of_a_year - day * total_seconds_of_a_day - hour * total_seconds_of_a_hour) / 60)
+            var sec = (sec % 60)
+            if (min < 10) { min = '0' + min }
+            if (hour < 10) { hour = '0' + hour }
+            if (day < 10) { day = '0' + day }
+            if (sec < 10) { sec = '0' + sec }
+            var str = year + " বছর<br>" + day + " দিন<br>" + hour + " ঘণ্টা<br>" + min + " মিনিট<br>" + sec + " সেকেন্ড";
+            document.getElementById('age').innerHTML = str;
+        }
+
+        timer = setInterval(age, 1);
+
+    </script>
+</head>
+
+<body>
+    <br>
+    <div class="container" style="text-align: center;">
+        <div id="age" style="font-family: CharuChandanHardStroke;" class="alert alert-success"></div>
+        <div id="age" style="font-family: CharukolaUltraLight;" class="alert alert-warning"><b>জীবন সুন্দর <spna
+                    style="color: red;">❤️</spna></b></div>
+    </div>
+
+</body>
+
+</html>
